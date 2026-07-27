@@ -52,7 +52,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.5.4",
-    "@types/node": "24.13.3",
+    "@types/node": "26.1.1",
     "@types/tar-stream": "3.1.4",
     "@vitest/coverage-v8": "4.1.10",
     "jsdoc-lint": "0.4.0",
