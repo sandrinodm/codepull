@@ -1,0 +1,63 @@
+{
+  "name": "codepull",
+  "version": "0.1.0",
+  "description": "Pull shared source code from a GitHub monorepo into your project.",
+  "type": "module",
+  "exports": {},
+  "bin": {
+    "codepull": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "check": "biome check . && jsdoc-lint src && pnpm typecheck",
+    "check:fix": "biome check --write . && jsdoc-lint src && pnpm typecheck",
+    "prepack": "pnpm run build",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "typecheck": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "packageManager": "pnpm@11.6.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sandrinodm/codepull.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sandrinodm/codepull/issues"
+  },
+  "homepage": "https://github.com/sandrinodm/codepull#readme",
+  "keywords": [
+    "cli",
+    "monorepo",
+    "source-code",
+    "code-sharing",
+    "git"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "dependencies": {
+    "commander": "15.0.0",
+    "tar-stream": "3.2.0",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.4",
+    "@types/node": "24.13.3",
+    "@types/tar-stream": "3.1.4",
+    "@vitest/coverage-v8": "4.1.10",
+    "jsdoc-lint": "0.4.0",
+    "release-it": "20.2.1",
+    "typescript": "7.0.2",
+    "vitest": "4.1.10"
+  }
+}

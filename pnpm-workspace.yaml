@@ -1,0 +1,4 @@
+engineStrict: true
+minimumReleaseAge: 10080
+savePrefix: ''
+verifyDepsBeforeRun: false
