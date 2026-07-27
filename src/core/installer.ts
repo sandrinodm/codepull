@@ -367,12 +367,18 @@ async function activateOperations(
         }
         try {
           if (current.isDirectory) {
-            await mkdir(current.destination);
+            // Windows cannot rename a directory over an existing empty
+            // directory. A direct directory rename is already atomic there
+            // and fails if another process claims the destination first.
+            if (process.platform !== 'win32') {
+              await mkdir(current.destination);
+              current.reserved = true;
+            }
           } else {
             const reservation = await open(current.destination, 'wx', 0o600);
             await reservation.close();
+            current.reserved = true;
           }
-          current.reserved = true;
         } catch (reservationError) {
           await rollbackOrThrow(operations.slice(0, index), stageRoot, reservationError);
         }
