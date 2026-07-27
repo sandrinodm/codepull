@@ -1,6 +1,6 @@
 {
   "name": "codepull",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Pull shared source code from a GitHub monorepo into your project.",
   "type": "module",
   "exports": {},
