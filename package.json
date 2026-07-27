@@ -5,7 +5,7 @@
   "type": "module",
   "exports": {},
   "bin": {
-    "codepull": "./dist/cli.js"
+    "codepull": "dist/cli.js"
   },
   "files": [
     "dist",
