@@ -48,7 +48,7 @@
   "dependencies": {
     "commander": "15.0.0",
     "tar-stream": "3.2.0",
-    "zod": "4.4.3"
+    "zod": "4.5.4"
   },
   "devDependencies": {
     "@biomejs/biome": "2.5.4",
